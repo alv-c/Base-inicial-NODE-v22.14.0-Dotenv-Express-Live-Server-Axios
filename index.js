@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
-const { obterMensagem } = require('./services'); // Importando a função
+// const axios = require('axios');
+const { obterMensagemComAxios } = require('./services'); // Importando a função
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -9,10 +10,16 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static('public'));
 
 app.get('/api', (req, res) => {
-    // para chamar uma função externa dentro de um endpoint, para realizar um serviço
-    const resposta = obterMensagem(); // Chamando a função
+    // *********** para chamar uma função externa dentro de um endpoint, para realizar um serviço ***********
+
+    // SEM AXIOS
+    // const resposta = obterMensagemSemAxios(); // Chamando a função
+
+    // COM AXIOS
+    const resposta = obterMensagemComAxios().then(console.log).catch(console.error);
+
+
     res.json(resposta);
-    
     // res.json({ mensagem: 'Hello from API!' });
 });
 
