@@ -1,10 +1,10 @@
 ******* Projeto base Node v22.14.0 *******
 
 Instalações: 
-Requisições - Axios
-Variávels globais - Dotenv
-Requisitar front-end sem API - live-server
-API - Express
+- Requisições - Axios
+- Variávels globais - Dotenv
+- Requisitar front-end sem API - live-server
+- API - Express
 
 Executar projeto com API:
 - npm install
